@@ -45,17 +45,21 @@ server.post('/', (req, res, next) => {
 
 
   if (status.code === 200 && result.action === 'convert') {
-    const {
-      outputCurrency,
-      amountToconvert
-    } = result.parameters;
+    // const {
+    //   outputCurrency,
+    //   amountToconvert
+    // } = result.parameters;
+    const outputCurrency = result.parameters.outputCurrency;
+    const amountToconvert = result.parameters.amountToconvert;
 
       //check if input currency code === output currency code
       if (amountToconvert.currency === outputCurrency) {
-        const {
-          amount,
-          currency
-        } = amountToconvert;
+        // const {
+        //   amount,
+        //   currency
+        // } = amountToconvert;
+        const amount = amountToconvert.amount;
+        const currency = amountToconvert.currency;
         let responseText = `Well, ${amount} ${outputCurrency} is obviously equal to ${amount} ${outputCurrency}!`;
         res.json({
           speech: responseText,
