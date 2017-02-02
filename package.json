@@ -4,7 +4,7 @@
   "description": "",
   "main": "webhook.js",
   "scripts": {
-    "start": "node webhook.js",
+    "start": "node ./webhook.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -18,6 +18,6 @@
     "restify": "4.3.0"
   },
   "engines": {
-    "node": "7.4.1"
+    "node": "4.1.1"
   }
 }
