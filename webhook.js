@@ -38,11 +38,12 @@ const convertCurrency = (amountToconvert, outputCurrency, cb) => {
 
 //POST route handler
 server.post('/', (req, res, next) => {
-  let {
-    status,
-    result
-  } = req.body;
-
+  // let {
+  //   status,
+  //   result
+  // } = req.body;
+  let status = req.body.status;
+  let  result = req.body.result;
 
   if (status.code === 200 && result.action === 'convert') {
     // const {
