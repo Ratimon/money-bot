@@ -10,10 +10,13 @@ server.use(Restify.bodyParser());
 server.use(Restify.jsonp());
 
 const convertCurrency = (amountToconvert, outputCurrency, cb) => {
-  const {
-    amount,
-    currency
-  } = amountToconvert;
+  // const {
+  //   amount,
+  //   currency
+  // } = amountToconvert;
+
+  const amount = amountToconvert.amount;
+  const currency = amountToconvert.currency;
   return request({
     url: "http://api.fixer.io/latest",
     qs: {
